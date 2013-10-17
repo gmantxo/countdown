@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Countdown</title>
+
+<meta property="og:title" content="Countdown">
+<meta property="og:description" content="Todos juntos esperando el viaje de Germán.">
+<meta property="og:image" content="http://germanventriglia.com/countdown/img/apple-touch-icon-152x152.png">
+
+
+<link href='http://fonts.googleapis.com/css?family=Roboto:100|Oswald:300,700' rel='stylesheet' type='text/css'>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+<link rel="stylesheet" href="style.css">
+
+
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
+  <link rel="apple-touch-icon" sizes="57x57" href="img/apple-touch-icon-57x57.png" />
+  <link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72x72.png" />
+  <link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-114x114.png" />
+  <link rel="apple-touch-icon" sizes="144x144" href="img/apple-touch-icon-144x144.png" />
+  <link rel="apple-touch-icon" sizes="57x57" href="img/apple-touch-icon-60x60.png" />
+  <link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-120x120.png" />
+  <link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-76x76.png" />
+  <link rel="apple-touch-icon" sizes="144x144" href="img/apple-touch-icon-152x152.png" />
+
+
+
+ <script src="jquery.countdown.js"></script>
+ <script src="jquery.color-2.1.2.js"></script>
+<script>
+
+$(function() {
+  var currentDate = new Date();
+  $('#countdown-container').countdown('2014/04/30 19:00:00', function(event) {
+    $this = $(this);
+    switch(event.type) {
+      case "seconds":
+      case "minutes":
+      case "hours":
+      case "days":
+      case "weeks":
+      case "daysLeft":
+        $this.find('span#'+event.type+">span").html(event.value);
+        break;
+      case "finished":
+        $this.fadeTo('slow', .5);
+        break;
+    }
+  });
+});
+</script>
+</head>
+
+<body>
+<div id="countdown-container">
+  <span class="number" id="days"><span></span>
+    <p>DÍAS</p>
+  </span>  
+  <span class="number" id="hours"><span></span>
+    <p>HORAS</p>
+  </span>
+  <span class="number" id="minutes"><span></span>
+    <p>MINUTOS</p>
+  </span>
+  <span class="number" id="seconds"><span></span>
+    <p>SEGUNDOS</p>
+  </span>
+</div>
+<script>
+document.body.style.backgroundColor = '#'+Math.floor(Math.random()*16777215).toString(16);
+document.body.style.color = '#'+Math.floor(Math.random()*16777215).toString(16);
+
+
+var changeColors = function() {
+  var bgColor = '#'+Math.floor(Math.random()*16777215).toString(16);
+  var txtColor = '#'+Math.floor(Math.random()*16777215).toString(16);
+  $("body").animate({ backgroundColor: bgColor , color:txtColor}, 4999, "linear");
+}
+
+changeColors();
+
+setInterval(changeColors, 5000);
+
+</script>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=489553567744276";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+</body>
+</html>
