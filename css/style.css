@@ -22,7 +22,7 @@ body:before {
 	vertical-align: middle;
 	font-size: 0;
 }
-#countdown-container {
+div.countdown-container {
 	position: relative;
 	display: inline-block;
 	margin-top: auto;
