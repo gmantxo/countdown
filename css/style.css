@@ -22,8 +22,8 @@ body:before {
 	vertical-align: middle;
 	font-size: 0;
 }
-
 div.logo {
+	z-index: 10;
 	position: fixed;
 	width: 144px;
 	height: 59px;
