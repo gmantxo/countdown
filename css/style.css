@@ -22,6 +22,21 @@ body:before {
 	vertical-align: middle;
 	font-size: 0;
 }
+
+div.logo {
+	position: fixed;
+	width: 144px;
+	height: 59px;
+	background: #EA534E url(../img/logo1x.jpg) center center no-repeat;
+	top:0;
+	left:50%;
+	margin-left: -72px;
+	border-radius: 0 0 5px 5px;
+	-moz-box-shadow:0px 1px 0px rgba(0,0,0,0.1);
+	-webkit-box-shadow:0px 1px 0px rgba(0,0,0,0.1);
+	box-shadow:0px 1px 0px rgba(0,0,0,0.1);
+}
+
 div.countdown-container {
 	position: relative;
 	display: inline-block;
@@ -41,7 +56,6 @@ span.number {
 	text-align: center;
 	font-size: 10vw;
 	line-height: 10vw;
-	background background-color: black;	
 }
 span.number:first-child {
 	margin-left: 4vw;
@@ -53,15 +67,46 @@ span>p{
 	font-weight: 300;
 	color: rgba(255,255,255,0.5);
 }
-@media only screen 
-	and (max-width : 1350px) {
+div.shareButtons {
+	position: fixed;
+	width: 144px;
+	height: 48px;
+	background-color: black;
+	bottom:0;
+	left:50%;
+	margin-left: -72px;
+}
+a.shareButton {
+	display: inline-block;
+	width: 48px;
+	height: 48px;
+	background:url(../img/socialMediaIcons1x.jpg) no-repeat;
+}
+a.facebook {
+	background-position: top left;
+}
+a.facebook:hover {
+	background-position: bottom left;
+}
+a.googlePlus {
+	background-position: top center;
+}
+a.googlePlus:hover {
+	background-position: bottom center;
+}
+a.twitter {
+	background-position: top right;
+}
+a.twitter:hover {
+	background-position: bottom right;
+}
+@media only screen and (max-width : 1350px) {
 		span>p{
 			font-size: 1.5vw;
 			line-height: 1.5vw;
 		}
 }
-@media only screen 
-	and (max-width : 930px) {
+@media only screen and (max-width : 930px) {
 		span>p{
 			font-size: 2vw;
 			line-height: 2vw;
@@ -70,9 +115,7 @@ span>p{
 			border-width: 1px;
 		}
 }
-@media only screen 
-	and (max-width : 580px)
-	and (orientation : portrait) {
+@media only screen and (max-width : 580px) and (orientation : portrait) {
 		span.number {
 			margin-bottom: 4vw;
 			padding-top: 7.5vw;
@@ -92,5 +135,16 @@ span>p{
 			line-height: 6vw;
 		
 			margin-top: 3vw;
+		}
 }
-}
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {  
+    div.logo {
+		background-image: url(../img/logo2x.jpg);
+		background-size: 144px 59px;
+	}
+		a.shareButton {
+		background-image:url(../img/socialMediaIcons2x.jpg);
+		background-size: 144px 96px;
+	}
+
+}  
